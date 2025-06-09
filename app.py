@@ -10,7 +10,7 @@ import plotly.express as px
 import random  
 from utils import export_to_pdf
 import streamlit as st
-
+from textblob import TextBlob
 import nltk
 import os
 
