@@ -14,3 +14,7 @@ port = $PORT\n\
 
 python -m nltk_setup.py
 python -m textblob.download_corpora
+
+#!/bin/bash
+mkdir -p ~/.nltk_data
+python -m nltk.downloader -d ~/.nltk_data punkt averaged_perceptron_tagger wordnet
