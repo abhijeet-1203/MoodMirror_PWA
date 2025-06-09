@@ -1,0 +1,56 @@
+Unnamed: 0,Entry,Sentiment,Score,Keywords,Date
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,"hello
+",Neutral,0.0,,2025-05-05
+,Reconnected with an old friend over coffee. Laughed for hours like no time had passed.,Positive,0.7579,"reconnected, old friend, laughed",2025-05-05
+,"Overwhelmed with deadlines. Can't sleep, can't eat, just panic.",Positive,0.4408,"overwhelmed, ca, n't sleep, ca n't",2025-05-05
+,"Usual Tuesday: gym at 7, work 9-5, watched Netflix after dinner.",Neutral,0.0,"usual, netflix",2025-05-05
+,"thats sunny day !
+",Positive,0.4753,thats sunny day,2025-05-05
+,i hate goodbyes!,Negative,-0.6114,,2025-05-05
+,i like python!,Positive,0.4199,,2025-05-05
+,its raining outside!,Neutral,0.0,,2025-05-10
+,i like to kill people,Negative,-0.4939,,2025-05-10
+,i like to kill people,Negative,-0.4939,,2025-05-10
+,i dont like python ,Negative,-0.2755,i dont,2025-05-10
+,i dont hate python ,Positive,0.4585,i dont,2025-05-10
+,kill,Negative,-0.6908,,2025-05-10
+,i like to to learn c and and c ++,Positive,0.3612,c ++,2025-05-10
+,i like to learn c c c c ,Positive,0.3612,c c c c,2025-05-10
+,spend a day with old friend!,Positive,0.5411,old friend,2025-05-10
+,Done with chest tricep day today at gym!,Neutral,0.0,"done, chest tricep day",2025-05-13
+,It was a crazy day today!,Negative,-0.4003,crazy day,2025-05-15
+,It was a great day today!,Positive,0.6588,great day,2025-05-17
+,I had a terrible experience at hotel!,Negative,-0.5255,terrible experience,2025-05-17
+,It was a great day today!,Positive,0.6588,great day,2025-05-17
