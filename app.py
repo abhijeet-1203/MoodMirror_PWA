@@ -10,6 +10,19 @@ import plotly.express as px
 import random  
 from utils import export_to_pdf
 
+import nltk
+import textblob
+
+# Download corpora (only the first time)
+try:
+    _ = textblob.TextBlob("test").noun_phrases
+except textblob.exceptions.MissingCorpusError:
+    nltk.download('brown')
+    nltk.download('punkt')
+    nltk.download('wordnet')
+    nltk.download('averaged_perceptron_tagger')
+    nltk.download('conll2000')
+
 import streamlit as st
 
 st.set_page_config(page_title="MoodMirror", page_icon="🪞", layout="centered")
