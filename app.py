@@ -13,13 +13,12 @@ import streamlit as st
 
 import nltk
 import os
-from textblob import TextBlob
 
-# Define a safe path to store NLTK corpora
+# Set a persistent path for NLTK downloads
 nltk_data_path = os.path.join(os.path.expanduser("~"), "nltk_data")
 nltk.data.path.append(nltk_data_path)
 
-# Force download of essential corpora
+# Download essential corpora
 for resource in ["punkt", "averaged_perceptron_tagger", "wordnet", "brown"]:
     try:
         nltk.data.find(resource)
