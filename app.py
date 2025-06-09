@@ -12,11 +12,16 @@ from utils import export_to_pdf
 import streamlit as st
 
 import nltk
+import os
 
-# Download necessary NLTK data
-nltk.download('punkt')
-nltk.download('averaged_perceptron_tagger')
-nltk.download('wordnet')
+# Set a persistent path to download NLTK data
+nltk_data_path = os.path.join(os.path.expanduser("~"), "nltk_data")
+nltk.data.path.append(nltk_data_path)
+
+# Download necessary corpora if not already present
+nltk.download('punkt', download_dir=nltk_data_path)
+nltk.download('averaged_perceptron_tagger', download_dir=nltk_data_path)
+nltk.download('wordnet', download_dir=nltk_data_path)
 
 
 st.set_page_config(page_title="MoodMirror", page_icon="🪞", layout="centered")
