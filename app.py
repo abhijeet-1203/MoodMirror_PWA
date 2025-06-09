@@ -10,20 +10,14 @@ import plotly.express as px
 import random  
 from utils import export_to_pdf
 import streamlit as st
+
 import nltk
-import textblob
 
-try:
-    _ = textblob.TextBlob("test").noun_phrases
-except textblob.exceptions.MissingCorpusError:
-    nltk.download('brown')
-    nltk.download('punkt')
-    nltk.download('wordnet')
-    nltk.download('averaged_perceptron_tagger')
-    nltk.download('conll2000')
+# Download necessary NLTK data
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('wordnet')
 
-from sentiment_analysis import analyze_sentiment, get_keywords
-from utils import load_entries, save_entry
 
 st.set_page_config(page_title="MoodMirror", page_icon="🪞", layout="centered")
 
