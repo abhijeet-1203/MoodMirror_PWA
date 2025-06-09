@@ -10,21 +10,31 @@ import plotly.express as px
 import random  
 from utils import export_to_pdf
 import streamlit as st
-from textblob import TextBlob
 import nltk
+import ssl
 import os
+from pathlib import Path
 
-# Set a persistent path for NLTK downloads
-nltk_data_path = os.path.join(os.path.expanduser("~"), "nltk_data")
-nltk.data.path.append(nltk_data_path)
+# Create a custom NLTK data directory in the app folder
+nltk_data_dir = Path(__file__).parent / "nltk_data"
+nltk_data_dir.mkdir(exist_ok=True)
+nltk.data.path.append(str(nltk_data_dir))
 
-# Download essential corpora
-for resource in ["punkt", "averaged_perceptron_tagger", "wordnet", "brown"]:
-    try:
-        nltk.data.find(resource)
-    except LookupError:
-        nltk.download(resource, download_dir=nltk_data_path)
+# Bypass SSL verification for NLTK downloads (common in restricted environments)
+try:
+    _create_unverified_https_context = ssl._create_unverified_context
+except AttributeError:
+    pass
+else:
+    ssl._create_default_https_context = _create_unverified_https_context
 
+# Download NLTK data with error handling
+try:
+    nltk.download('punkt', download_dir=str(nltk_data_dir), quiet=True)
+    nltk.download('averaged_perceptron_tagger', download_dir=str(nltk_data_dir), quiet=True)
+    nltk.download('brown', download_dir=str(nltk_data_dir), quiet=True)
+except Exception as e:
+    print(f"NLTK data download warning: {str(e)}")
 
 
 st.set_page_config(page_title="MoodMirror", page_icon="🪞", layout="centered")
