@@ -13,15 +13,19 @@ import streamlit as st
 
 import nltk
 import os
+from textblob import TextBlob
 
-# Set a persistent path to download NLTK data
+# Define a safe path to store NLTK corpora
 nltk_data_path = os.path.join(os.path.expanduser("~"), "nltk_data")
 nltk.data.path.append(nltk_data_path)
 
-# Download necessary corpora if not already present
-nltk.download('punkt', download_dir=nltk_data_path)
-nltk.download('averaged_perceptron_tagger', download_dir=nltk_data_path)
-nltk.download('wordnet', download_dir=nltk_data_path)
+# Force download of essential corpora
+for resource in ["punkt", "averaged_perceptron_tagger", "wordnet", "brown"]:
+    try:
+        nltk.data.find(resource)
+    except LookupError:
+        nltk.download(resource, download_dir=nltk_data_path)
+
 
 
 st.set_page_config(page_title="MoodMirror", page_icon="🪞", layout="centered")
