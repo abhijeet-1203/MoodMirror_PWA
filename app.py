@@ -25,8 +25,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-st.set_page_config(page_title="MoodMirror - AI Mental Health Journal", layout="centered")
-
 # Add cursor CSS immediately after
 st.markdown("""
 <style>
