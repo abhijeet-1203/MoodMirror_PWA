@@ -17,11 +17,6 @@ from pathlib import Path
 from nltk_loader import loader  # This will ensure data is available
 
 
-st.set_page_config(
-    page_title="MoodMirror - AI Journal",
-    page_icon="assets/icon-512.png",  # This sets favicon + icon on mobile
-    layout="centered"
-)
 
 st.image("logo.png", width=120)  # Optional: show logo in app
 st.title("MoodMirror 🪞")
