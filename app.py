@@ -14,6 +14,7 @@ import nltk
 import ssl
 import os
 from pathlib import Path
+from nltk_loader import loader  # This will ensure data is available
 
 # Create a custom NLTK data directory in the app folder
 nltk_data_dir = Path(__file__).parent / "nltk_data"
