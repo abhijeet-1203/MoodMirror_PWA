@@ -16,6 +16,17 @@ import os
 from pathlib import Path
 from nltk_loader import loader  # This will ensure data is available
 
+
+st.set_page_config(
+    page_title="MoodMirror - AI Journal",
+    page_icon="assets/icon-512.png",  # This sets favicon + icon on mobile
+    layout="centered"
+)
+
+st.image("logo.png", width=120)  # Optional: show logo in app
+st.title("MoodMirror 🪞")
+
+
 # Create a custom NLTK data directory in the app folder
 nltk_data_dir = Path(__file__).parent / "nltk_data"
 nltk_data_dir.mkdir(exist_ok=True)
