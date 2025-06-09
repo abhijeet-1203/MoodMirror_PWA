@@ -1,42 +1,27 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
+import matplotlib.pyplot as plt
+import seaborn as sns
+from wordcloud import WordCloud
+from datetime import datetime
+from sentiment_analysis import analyze_sentiment_vader, get_keywords
+from utils import save_entry, load_entries
+import plotly.express as px 
+import random  
+from utils import export_to_pdf
+import streamlit as st
 import nltk
-from textblob import TextBlob
-import textblob.exceptions
+import textblob
 
-# ✅ Download all required corpora safely
+# Download corpora (only the first time)
 try:
-    nltk.data.find('tokenizers/punkt')
-except LookupError:
-    nltk.download('punkt')
-
-try:
-    nltk.data.find('corpora/brown')
-except LookupError:
+    _ = textblob.TextBlob("test").noun_phrases
+except textblob.exceptions.MissingCorpusError:
     nltk.download('brown')
-
-try:
-    nltk.data.find('corpora/wordnet')
-except LookupError:
+    nltk.download('punkt')
     nltk.download('wordnet')
-
-try:
-    nltk.data.find('taggers/averaged_perceptron_tagger')
-except LookupError:
     nltk.download('averaged_perceptron_tagger')
-
-try:
-    nltk.data.find('corpora/conll2000')
-except LookupError:
     nltk.download('conll2000')
-
-# Now safe to use noun phrases
-try:
-    _ = TextBlob("test").noun_phrases
-except textblob.exceptions.MissingCorpusError as e:
-    st.error("Failed to load necessary NLP corpora. Try restarting the app.")
-    st.stop()
 
 
 st.set_page_config(page_title="MoodMirror", page_icon="🪞", layout="centered")
