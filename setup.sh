@@ -13,3 +13,4 @@ port = $PORT\n\
 " > ~/.streamlit/config.toml
 
 python -m nltk_setup.py
+python -m textblob.download_corpora
