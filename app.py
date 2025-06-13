@@ -17,7 +17,6 @@ from pathlib import Path
 from nltk_loader import loader  # This will ensure data is available
 
 st.set_page_config(page_title="MoodMirror", page_icon="🪞", layout="centered")
-st.title("MoodMirror 🪞")
 
 
 # Create a custom NLTK data directory in the app folder
