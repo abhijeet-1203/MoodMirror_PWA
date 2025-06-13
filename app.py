@@ -17,8 +17,6 @@ from pathlib import Path
 from nltk_loader import loader  # This will ensure data is available
 
 
-
-st.image("logo.png", width=120)  # Optional: show logo in app
 st.title("MoodMirror 🪞")
 
 
