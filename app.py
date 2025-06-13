@@ -16,7 +16,7 @@ import os
 from pathlib import Path
 from nltk_loader import loader  # This will ensure data is available
 
-
+st.set_page_config(page_title="MoodMirror", page_icon="🪞", layout="centered")
 st.title("MoodMirror 🪞")
 
 
@@ -40,9 +40,6 @@ try:
     nltk.download('brown', download_dir=str(nltk_data_dir), quiet=True)
 except Exception as e:
     print(f"NLTK data download warning: {str(e)}")
-
-
-st.set_page_config(page_title="MoodMirror", page_icon="🪞", layout="centered")
 
 # Inject manifest and service worker
 st.markdown("""
